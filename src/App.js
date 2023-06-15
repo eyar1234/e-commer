@@ -1,8 +1,21 @@
-import "./categories.styles.scss";
-import CategoryData from "./components/data-category/data-category.component";
+import Home from "./routes/home/home.component";
+import { Route, Routes } from "react-router-dom";
+import Navigation from "./routes/navigation/navigation.component";
+import SignIn from "./routes/sign-in/sign-in.component";
+const Shop = () => {
+  return <h1>i am the shop</h1>;
+};
 
 const App = () => {
-  return <CategoryData />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop />} />
+        <Route path="sign-in" element={<SignIn />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
